@@ -1,0 +1,57 @@
+{
+  "version": "0.0.1",
+  "name": "@calvear/sample-javascript-lib",
+  "title": "JavaScript NPM Library Sample",
+  "description": "JavaScript NPM Library Sample.",
+  "author": "Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "repository": "https://github.com/calvear93/samples-javascript-lib",
+  "main": "index.js",
+  "keywords": [
+    "npm",
+    "sample",
+    "javascript",
+    "react"
+  ],
+  "engines": {
+    "node": ">=12",
+    "npm": ">=6"
+  },
+  "peerDependencies": {
+    "react": ">=17.0.2",
+    "react-dom": ">=17.0.2"
+  },
+  "dependencies": {
+    "mathjs": "^9.4.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.14.3",
+    "@babel/eslint-parser": "^7.14.3",
+    "@babel/preset-env": "^7.14.2",
+    "@babel/preset-react": "^7.13.13",
+    "@testing-library/jest-dom": "^5.12.0",
+    "@testing-library/react": "^11.2.7",
+    "@testing-library/user-event": "^13.1.9",
+    "copyfiles": "^2.4.1",
+    "eslint": "^7.27.0",
+    "eslint-plugin-import": "^2.23.3",
+    "eslint-plugin-jest": "^24.3.6",
+    "eslint-plugin-jsdoc": "^34.8.2",
+    "eslint-plugin-radar": "^0.2.1",
+    "eslint-plugin-react": "^7.23.2",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "jest": "^26.6.3"
+  },
+  "scripts": {
+    "build": "npx babel src --out-dir dist --copy-files --source-maps",
+    "upload": "npm run build && npm login && cd dist && npm publish --access public",
+    "upload:beta": "npm run build && npm login && cd dist && npm publish --access public --tag beta",
+    "upload:alpha": "npm run build && npm login && cd dist && npm publish --access public --tag alpha",
+    "lint:analyze": "eslint --ext .js,.jsx,.ts,.tsx src/",
+    "lint:fix": "eslint --fix --ext .js,.jsx,.ts,.tsx src/",
+    "test": "test --watchAll=false --verbose",
+    "prebuild": "rimraf dist/**",
+    "postbuild": "copyfiles package.json README.md LICENSE.md CHANGELOG.md dist"
+  }
+}

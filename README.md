@@ -1,2 +1,9 @@
-# samples-javascript-lib
-JavaScript lib package sample.
+# JavaScript NPM Library Sample
+
+## License 📄
+
+This project is licensed under the MIT License - see [LICENSE.md](LICENSE.md) file for details.
+
+---
+
+⌨ by [Alvear Candia, Cristopher Alejandro](https://github.com/calvear93)
